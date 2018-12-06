@@ -8,7 +8,9 @@ msg.text = document.querySelector('[name="text"]').value;
 
 function populateVoices() {
   voices = this.getVoices();
+  console.log(voices);
   voicesDropdown.innerHTML = voices.filter(voice => voice.name !== "Microsoft David Desktop - English (United States)" && voice.name !== "Microsoft Zira Desktop - English (United States)")
+                                   //.filter(voice => voice.lang.includes('en')) //for voice options in English only
                                    .map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`)
                                    .join("");
 }
